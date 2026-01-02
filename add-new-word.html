@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add New Word</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-dark": "#193324",
+                        "surface-light": "#ffffff",
+                        "border-dark": "#326747",
+                        "border-light": "#e5e7eb",
+                        "text-secondary-dark": "#92c9a8",
+                        "text-secondary-light": "#6b7280",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit to match the dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102217;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #326747;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #13ec6a;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col text-gray-900 dark:text-white pb-10">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-white/10 px-4 py-3 flex items-center justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">close</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Add New Word</h1>
+<button id="save-word-btn" class="text-primary font-bold text-base px-2 py-1 hover:text-primary/80 transition-colors">
+            Save
+        </button>
+</header>
+<!-- Main Form Content -->
+<main class="flex-1 w-full max-w-lg mx-auto p-4 flex flex-col gap-6">
+<!-- Section 1: Classification -->
+<section class="flex flex-col gap-4">
+<!-- Group Selector (Modal Trigger) -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Group</label>
+<button id="group-selector" class="w-full flex items-center justify-between bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3.5 text-left focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<span id="group-name" class="text-base font-medium">Spanish Basics</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">expand_more</span>
+</button>
+</div>
+<!-- Part of Speech -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Part of Speech</label>
+<div class="relative">
+<select id="part-of-speech" class="appearance-none w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3.5 pr-10 text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm cursor-pointer">
+<option selected="" value="noun">Noun</option>
+<option value="verb">Verb</option>
+<option value="adjective">Adjective</option>
+<option value="adverb">Adverb</option>
+<option value="phrase">Phrase</option>
+</select>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-gray-200 dark:border-white/5 mx-2"/>
+<!-- Section 2: The Word -->
+<section class="flex flex-col gap-5">
+<!-- Foreign Word Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Foreign Word</label>
+<div class="relative flex items-center">
+<input id="foreign-word" class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl pl-4 pr-24 py-3.5 text-lg font-normal placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="e.g. Gato" type="text"/>
+<!-- Audio Controls -->
+<div class="absolute right-2 flex items-center gap-1">
+<button aria-label="Record pronunciation" class="size-9 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-gray-500 dark:text-text-secondary-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button aria-label="Play pronunciation" class="size-9 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] fill-current">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Native Word Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Native Translation</label>
+<div class="relative flex items-center">
+<input id="native-translation" class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl pl-4 pr-24 py-3.5 text-lg font-normal placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="e.g. Cat" type="text"/>
+<!-- Audio Controls -->
+<div class="absolute right-2 flex items-center gap-1">
+<button aria-label="Record pronunciation" class="size-9 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-gray-500 dark:text-text-secondary-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button aria-label="Play pronunciation" class="size-9 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] fill-current">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Context -->
+<section class="flex flex-col gap-4 mt-2">
+<h3 class="text-base font-semibold text-gray-900 dark:text-white px-1">Context</h3>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Example Sentence</label>
+<textarea id="example-sentence" class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3 resize-none text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="El gato negro duerme en el sofá." rows="3"></textarea>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Description / Notes</label>
+<textarea id="description" class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3 resize-none text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="Add usage notes, gender hints, etc." rows="2"></textarea>
+</div>
+</section>
+<!-- Section 4: Linguistics & Relations -->
+<section class="flex flex-col gap-4 mt-2">
+<h3 class="text-base font-semibold text-gray-900 dark:text-white px-1">Relations</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Synonyms</label>
+<input class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="Add synonyms..." type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Antonyms</label>
+<input class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="Add antonyms..." type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Friend Words</label>
+<div class="flex items-center gap-2 p-2 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl min-h-[56px] flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-sm font-medium">
+                        felino
+                        <button class="hover:text-white hover:bg-primary/50 rounded-full p-0.5 ml-1 transition"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<input class="bg-transparent border-none focus:ring-0 text-base p-1 flex-1 min-w-[120px] placeholder:text-gray-400 dark:placeholder:text-gray-600" placeholder="Add cognates..." type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark ml-1">Tags</label>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center size-10 rounded-xl border border-dashed border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-500 hover:border-primary hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">add</span>
+</span>
+<div class="flex gap-2 overflow-x-auto no-scrollbar py-1">
+<span class="inline-flex shrink-0 items-center px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-sm">#animals</span>
+<span class="inline-flex shrink-0 items-center px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-sm">#beginner</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Grammar / Conjugations (Collapsible styled) -->
+<section class="mt-2 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden">
+<button class="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">school</span>
+<span class="font-medium text-base">Conjugations / Cases</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</button>
+<!-- Hidden content would go here, shown if expanded -->
+</section>
+<!-- Spacer -->
+<div class="h-6"></div>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-gray-200 dark:border-white/10 p-4 pb-8 z-40">
+<div class="max-w-lg mx-auto flex items-center justify-between">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-300 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+<span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Keep screen open</span>
+</label>
+</div>
+</div>
+<!-- Bottom padding to account for fixed footer -->
+<div class="h-16"></div>
+</main>
+<script src="js/main.js"></script>
+</body></html>

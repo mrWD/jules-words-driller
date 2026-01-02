@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Choose Languages</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Lexend -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-dark": "#1c3326", // Slightly lighter for cards/inputs
+                        "surface-highlight": "#254232", // Even lighter for interactions
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit to blend in */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102217;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c3326;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #254232;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-x-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden">
+<!-- Header -->
+<div class="flex items-center px-4 pt-6 pb-2 justify-between z-10 sticky top-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm">
+<button class="text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Language Setup</h2>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col px-6 pt-4 pb-24">
+<!-- Headline -->
+<div class="mb-8">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight mb-2">Let's set up your profile</h1>
+<p class="text-gray-400 text-base font-light">Choose your languages to customize your learning experience.</p>
+</div>
+<!-- Form Fields -->
+<div class="space-y-6">
+<!-- Native Language -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-base font-medium leading-normal flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">public</span>
+                        I speak...
+                    </label>
+<div class="relative">
+<select id="native-language-select" class="appearance-none w-full bg-surface-dark text-white rounded-xl h-14 pl-4 pr-12 border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all cursor-pointer font-normal text-base">
+<option selected="" value="en">English (United States)</option>
+<option value="es">Spanish</option>
+<option value="fr">French</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Target Language -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-base font-medium leading-normal flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">school</span>
+                        I want to learn...
+                    </label>
+<div class="relative">
+<select id="target-language-select" class="appearance-none w-full bg-surface-dark text-white rounded-xl h-14 pl-4 pr-12 border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all cursor-pointer font-normal text-base">
+<option disabled="" value="">Select target language</option>
+<option selected="" value="es">Spanish (Mexico)</option>
+<option value="fr">French</option>
+<option value="jp">Japanese</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Additional Languages -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-base font-medium leading-normal flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">add_circle</span>
+                        Also interested in...
+                    </label>
+<div class="relative">
+<select id="additional-language-select" class="appearance-none w-full bg-surface-dark text-white/50 rounded-xl h-14 pl-4 pr-12 border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all cursor-pointer font-normal text-base">
+<option selected="" value="">Add more languages</option>
+<option value="it">Italian</option>
+<option value="de">German</option>
+<option value="pt">Portuguese</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+<!-- Chips Area for selected additional languages -->
+<div class="flex flex-wrap gap-2 mt-2">
+<div class="flex items-center gap-2 bg-surface-highlight border border-white/10 rounded-full pl-3 pr-2 py-1.5 animate-fade-in">
+<span class="text-sm text-white font-medium">Japanese</span>
+<button class="flex items-center justify-center size-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-2 bg-surface-highlight border border-white/10 rounded-full pl-3 pr-2 py-1.5 animate-fade-in">
+<span class="text-sm text-white font-medium">Italian</span>
+<button class="flex items-center justify-center size-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent max-w-md mx-auto">
+<button id="start-learning-btn" class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold text-lg h-14 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-[0_0_20px_rgba(19,236,106,0.3)]">
+                Start Learning
+                <span class="material-symbols-outlined text-xl font-bold">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-gray-500 mt-3 font-light">Preferences are saved locally to your device.</p>
+</div>
+</div>
+<script src="js/main.js"></script>
+</body></html>

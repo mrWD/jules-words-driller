@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learning Modes</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-dark": "#1c2e24", // Slightly lighter than background-dark for cards
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden pb-20">
+<!-- Header -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1">Learning Modes</h2>
+<div class="flex w-24 items-center justify-end">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-transparent text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">language</span>
+</button>
+<a href="add-word-options.html" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-background-dark shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined font-bold">add</span>
+</a>
+</div>
+</div>
+<!-- Headline -->
+<div class="px-4 pb-2 pt-4">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left">
+                Choose your path
+            </h1>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Select a mode to begin your daily practice.</p>
+</div>
+<!-- Scrollable Content -->
+<div class="flex flex-col gap-4 p-4 overflow-y-auto no-scrollbar">
+<!-- Card: Classic Learning -->
+<button class="group flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] border border-transparent dark:border-white/5 text-left w-full">
+<div class="flex flex-col justify-between flex-[2_2_0px] py-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[16px]">wifi_off</span>
+<p class="text-primary text-xs font-medium leading-normal uppercase tracking-wide">Offline Ready</p>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-1 group-hover:text-primary transition-colors">Classic Learning</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Master basic vocabulary with flashcards.</p>
+</div>
+</div>
+<div class="w-24 h-24 sm:w-32 sm:h-auto bg-center bg-no-repeat bg-cover rounded-lg flex-none relative overflow-hidden" data-alt="Abstract green geometric shapes representing flashcards" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnJcEfOpGQozUkR4yTtOr1G_nIjPf0zGGX-21ADvva_8ugGv3qUrh3zT-fdw0Q1HA-lomltNcYFxUwiJ_EJXRzBXgLiMOOnrQkNGE19lLg6waomLiBLb0EECC-4IQjGgOkADC_2XSowaKFKb3EPDZ5jH5fBl42RfgKHwWdWmRRqMFB4ddBMabIHs00pDSDU5AMHtsyeKE_fOavtnVtO6BrQNy1xyxAeZhDLYOXY9NKgC15LBCF-LKQFAL0dMqX7C1iVDyOqoTqT7M");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</button>
+<!-- Card: Conjugations -->
+<button class="group flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] border border-transparent dark:border-white/5 text-left w-full">
+<div class="flex flex-col justify-between flex-[2_2_0px] py-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[16px]">wifi_off</span>
+<p class="text-primary text-xs font-medium leading-normal uppercase tracking-wide">Offline Ready</p>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-1 group-hover:text-primary transition-colors">Conjugations</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Practice verb forms and complex tenses.</p>
+</div>
+</div>
+<div class="w-24 h-24 sm:w-32 sm:h-auto bg-center bg-no-repeat bg-cover rounded-lg flex-none relative overflow-hidden" data-alt="Abstract flowing lines representing verb tenses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2mKEEatu_JN0gR2RJnx79Sm4xcZyowuPkqRr51tTEp7lgTYYSx_Dbv0ZEOARYnNkAOF1ryumId9DhFLHWoRnKGnNmi_Vbmf1m6eQXCRmpAU0YYnyQvpSFGRiGXXLT63Dqx0V7gaLiDvhbl6eSdPYOP2vDcjRSOm6HVfGBCh4s2kZ9B7zyoqBVfzsQEfw2AIMwsfr0oyTYucMLmqASwXEB2xiOaEJm9kwrFGZCkdWGfhzzFqEx27dSztms9e-TIP25fzVK-tarTCw");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</button>
+<!-- Card: Cases -->
+<button class="group flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] border border-transparent dark:border-white/5 text-left w-full">
+<div class="flex flex-col justify-between flex-[2_2_0px] py-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[16px]">wifi_off</span>
+<p class="text-primary text-xs font-medium leading-normal uppercase tracking-wide">Offline Ready</p>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-1 group-hover:text-primary transition-colors">Cases</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Navigate grammatical cases structure.</p>
+</div>
+</div>
+<div class="w-24 h-24 sm:w-32 sm:h-auto bg-center bg-no-repeat bg-cover rounded-lg flex-none relative overflow-hidden" data-alt="Structure blocks representing grammatical cases" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTqivg0eamuKiVMAmJJfUmD0wSQWtxflSL7fG5TcxV4DiN6oBBoYlJtptr13tk9Rg9Rl0Hp1YF0ZugyS25kk0FcD6-VgBcWnmbk31Cjx-8kI4fFS3UpTHkpjbh52nhXb5WOG3-8HPdAotaJU0LJgchyhQcAtXGPBuYC7oMP2OpiGGDUB5lILrql95r6Tc97vv1Mq8Jcl9B8Zt9nJCg8olnVxyuPjaOPznfuydw49--XMO9JXKOsE5pRUZ4WypwCd0hf0Isv_zuhes");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</button>
+<!-- Card: Antonyms & Synonyms -->
+<button class="group flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] border border-transparent dark:border-white/5 text-left w-full">
+<div class="flex flex-col justify-between flex-[2_2_0px] py-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[16px]">wifi_off</span>
+<p class="text-primary text-xs font-medium leading-normal uppercase tracking-wide">Offline Ready</p>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-1 group-hover:text-primary transition-colors">Antonyms &amp; Synonyms</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Expand your range of expression.</p>
+</div>
+</div>
+<div class="w-24 h-24 sm:w-32 sm:h-auto bg-center bg-no-repeat bg-cover rounded-lg flex-none relative overflow-hidden" data-alt="Duality and reflection abstract concept" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJQ0DipFlndxQz7ed_xETw1t4XYrzhgKlNlf9hcbV4Q1Xl9oO-_kcCGvd_-9u21gI0amRy1lGLDeQGoG1q00kuqkXeftBljyGslOdmYFfEhiBgBSOXSfuD3tUlrCKF-6eWPICZCstmLOShpQ8tonad-v_DwMAlWu9rW9XgNOTFddzOisb3GrDeHkUvBsC7Z_GEVBO6hZOtH0xLoXvzwalNYOyD3B0ea9-JAgRrKyYpGwrmV9l179v080GuWyWYi5ftQ_nEsSa971M");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</button>
+<!-- Card: Learning by Definition -->
+<button class="group flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] border border-transparent dark:border-white/5 text-left w-full">
+<div class="flex flex-col justify-between flex-[2_2_0px] py-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[16px]">wifi_off</span>
+<p class="text-primary text-xs font-medium leading-normal uppercase tracking-wide">Offline Ready</p>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-1 group-hover:text-primary transition-colors">Definitions</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Guess the word from its meaning.</p>
+</div>
+</div>
+<div class="w-24 h-24 sm:w-32 sm:h-auto bg-center bg-no-repeat bg-cover rounded-lg flex-none relative overflow-hidden" data-alt="Close up of book pages representing definitions" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtJN4aSRvu5niWjalxLi1GuQmr7eN1KbtjcDi55jwwwVm4B-5QykckZyKzA3IiUpZleRIEGdfpoZK9iFNAjr_JTBefZGWrp8UENRA0irenMT7LXvohSf8nm95uAAkd7DOEfjfILXYWoY_zYy6QhGVYd5vzQIGhFs1KwF66_DHtZhkwheZG7xr9GuP74zSBymqy0kbKpAd0N_vBz7za8X7EqeGPJK6cFFiQ9aoaAXz_Y8vhAy02UeCxWFWBjA3vCKUv9Mh3wWxpcIIE");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</button>
+</div>
+<!-- Footer / Daily Streak -->
+<div class="mt-auto px-6 py-4 flex justify-center items-center gap-2 opacity-80 mb-20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<p class="text-slate-600 dark:text-gray-400 text-sm font-medium">Daily Streak: <span class="text-slate-900 dark:text-white font-bold">12 Days</span></p>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 border-t border-slate-200 dark:border-white/10 bg-background-light dark:bg-background-dark backdrop-blur-lg pt-2 pb-6 px-6 z-50">
+<div class="flex justify-around items-center">
+<button class="flex flex-col items-center gap-1 text-primary group">
+<div class="relative">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</div>
+<span class="text-[10px] font-bold">Modes</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-gray-500 hover:text-slate-600 dark:hover:text-gray-300 transition-colors group">
+<span class="material-symbols-outlined text-[28px]">menu_book</span>
+<span class="text-[10px] font-medium">Vocab</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-gray-500 hover:text-slate-600 dark:hover:text-gray-300 transition-colors group">
+<span class="material-symbols-outlined text-[28px]">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</button>
+</div>
+</div>
+</div>
+<script src="js/main.js"></script>
+</body></html>

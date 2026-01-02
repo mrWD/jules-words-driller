@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up - Language Learning App</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-dark": "#1c2e24", // Custom surface color slightly lighter than background
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark">
+<div class="relative flex h-full min-h-screen w-full flex-col justify-between max-w-md mx-auto">
+<!-- Main Content Wrapper -->
+<div class="flex flex-col flex-1 px-4 py-6">
+<!-- Header / Status Bar Area Spacer -->
+<div class="h-4 w-full"></div>
+<!-- Visual Flair -->
+<div class="flex justify-center py-6">
+<div class="w-full h-48 rounded-xl bg-center bg-cover bg-no-repeat shadow-lg relative overflow-hidden" data-alt="Abstract vibrant green soundwaves representing language and voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnNK5IO_0z0eeuyWqFaIsFOQqZFuSB_Eqo-JlRVph1P-7qxlfqdhHS7zzPTDqFw-hnOF0YImFU_ihQh4QUNKS5CPZu8muQ-0psBIEj8AKUTHXApTg0h8FvzUuS9NOqm4pdr3W-u6fGvaI0up18q9WB_kMdanlsakH530WRCVRoi8gtckFRk-_gvlyNDzjA-ltqqrSo0iM3SDV0j59OS1krc_RLH5FeTRCa-D7vvORKvtvCJTU_g34tWmxo-rdSkMZhHy6ep_kDSaU");'>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 to-transparent"></div>
+</div>
+</div>
+<!-- Headlines -->
+<div class="flex flex-col gap-2 pb-6">
+<h1 class="text-3xl font-bold tracking-tight leading-tight text-center text-[#111418] dark:text-white">
+                    Let's get started
+                </h1>
+<p class="text-base font-normal leading-normal text-center text-[#637588] dark:text-[#92c9a8]">
+                    Save your vocabulary journey locally.
+                </p>
+</div>
+<!-- Form -->
+<div class="flex flex-col gap-4 w-full">
+<!-- Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium leading-normal text-[#111418] dark:text-white ml-1">Email</label>
+<div class="group flex w-full items-center rounded-lg border border-[#dce0e5] bg-white dark:border-[#3a5245] dark:bg-surface-dark overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
+<div class="flex items-center justify-center pl-4 pr-2 text-[#637588] dark:text-[#92c9a8]">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<input class="flex w-full flex-1 border-none bg-transparent py-4 px-2 text-base text-[#111418] dark:text-white placeholder:text-[#637588] dark:placeholder:text-[#5d7a6a] focus:ring-0 focus:outline-none" placeholder="Enter your email" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium leading-normal text-[#111418] dark:text-white ml-1">Password</label>
+<div class="group flex w-full items-center rounded-lg border border-[#dce0e5] bg-white dark:border-[#3a5245] dark:bg-surface-dark overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
+<div class="flex items-center justify-center pl-4 pr-2 text-[#637588] dark:text-[#92c9a8]">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<input class="flex w-full flex-1 border-none bg-transparent py-4 px-2 text-base text-[#111418] dark:text-white placeholder:text-[#637588] dark:placeholder:text-[#5d7a6a] focus:ring-0 focus:outline-none" placeholder="Create password" type="password"/>
+<button class="flex items-center justify-center pr-4 pl-2 text-[#637588] dark:text-[#92c9a8] hover:text-[#111418] dark:hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium leading-normal text-[#111418] dark:text-white ml-1">Confirm Password</label>
+<div class="group flex w-full items-center rounded-lg border border-[#dce0e5] bg-white dark:border-[#3a5245] dark:bg-surface-dark overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
+<div class="flex items-center justify-center pl-4 pr-2 text-[#637588] dark:text-[#92c9a8]">
+<span class="material-symbols-outlined text-[24px]">lock_reset</span>
+</div>
+<input class="flex w-full flex-1 border-none bg-transparent py-4 px-2 text-base text-[#111418] dark:text-white placeholder:text-[#637588] dark:placeholder:text-[#5d7a6a] focus:ring-0 focus:outline-none" placeholder="Confirm password" type="password"/>
+<button class="flex items-center justify-center pr-4 pl-2 text-[#637588] dark:text-[#92c9a8] hover:text-[#111418] dark:hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Spacer to push content up slightly -->
+<div class="flex-1 min-h-[24px]"></div>
+<!-- Action Area -->
+<div class="flex flex-col gap-4 pt-4 pb-6">
+<button id="signup-btn" class="flex w-full items-center justify-center rounded-lg bg-primary py-4 px-5 text-base font-bold tracking-wide text-background-dark shadow-[0_0_20px_rgba(19,236,106,0.3)] hover:bg-[#10d45e] hover:shadow-[0_0_25px_rgba(19,236,106,0.5)] active:scale-[0.98] transition-all duration-200 cursor-pointer">
+                    Sign Up
+                </button>
+<p class="text-center text-sm font-normal text-[#637588] dark:text-[#92c9a8]">
+                    Already a member?
+                    <a class="font-bold text-primary hover:underline hover:text-[#3bf083] transition-colors" href="index.html">Sign In</a>
+</p>
+</div>
+</div>
+</div>
+<script src="js/main.js"></script>
+</body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Word Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-dark": "#193626",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-background-dark">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<button class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Add Word</h2>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-4 pb-24 overflow-y-auto">
+<!-- HeadlineText -->
+<div class="pt-5 pb-6">
+<h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left">
+                How would you like to grow your vocabulary?
+            </h2>
+</div>
+<!-- Card: Add Manually -->
+<div class="mb-4">
+<div class="flex flex-col-reverse sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_0_4px_rgba(0,0,0,0.2)] border border-slate-100 dark:border-[#234832]">
+<div class="flex flex-[2_2_0px] flex-col justify-between gap-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">edit_note</span>
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Add Manually</p>
+</div>
+<p class="text-slate-500 dark:text-[#92c9a8] text-sm font-normal leading-normal">
+                            Input a specific word, translation, and your own personal notes.
+                        </p>
+</div>
+<a href="add-new-word.html" class="group flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-background-dark gap-2 text-sm font-bold leading-normal w-fit transition-transform active:scale-95">
+<span class="truncate">Create</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="w-full sm:w-1/3 min-h-[140px] bg-center bg-no-repeat bg-cover rounded-lg flex-1 relative overflow-hidden" data-alt="Close up of a hand writing in a notebook with a pen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDB6UE13yfHFhmAN_BOmrwXLiC2H_cTsTmIfU6nnqhysV-6WhyNkQR0ivU7fMBclZFmPrUrYdPI_xnCpSZBlJTDOUmpdV2zBc3LU5XE49mW0mvsgywWjqQUtwXW8d-uquktG6aBnUEvJnVBdv27yklXi7fAfTGF27Z95KwACLNRXYX3yMQ2YJugcHKyKZi3eADfVe95HkgiFkGm-TJvmV1d1aRdszVAaICQidUnTp6qsaZsi4pXa4v332a7fwEV6x4w3WeIB3Kjo1g");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Card: Explore Suggestions -->
+<div class="mb-4">
+<div class="flex flex-col-reverse sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_0_4px_rgba(0,0,0,0.2)] border border-slate-100 dark:border-[#234832]">
+<div class="flex flex-[2_2_0px] flex-col justify-between gap-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">explore</span>
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Explore Suggestions</p>
+</div>
+<p class="text-slate-500 dark:text-[#92c9a8] text-sm font-normal leading-normal">
+                            Browse recommended words from our library based on your level.
+                        </p>
+</div>
+<a href="word-suggestion.html" class="group flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-slate-200 dark:bg-[#234832] text-slate-900 dark:text-white gap-2 text-sm font-bold leading-normal w-fit transition-colors hover:bg-slate-300 dark:hover:bg-[#2d5c40] active:scale-95">
+<span class="truncate">Explore</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="w-full sm:w-1/3 min-h-[140px] bg-center bg-no-repeat bg-cover rounded-lg flex-1 relative overflow-hidden" data-alt="Abstract image of floating glowing letters or symbols representing discovery" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKgLOU1SOfdvy7ujfqaqDPS2X5Ik74N5vr4DoOB9KSAih15Hsxv6-4Ip6cpY-qV-GN-CcHS-WhUviuZYrQbA2mQCruzZZvVxXWzUXyB4DH3m2J9qXxzIofzeNOJPZQTjd6quvICOMn9QGAGN3r3fPvLxvXP2IeP0bn1s-jPPEqJy8YP7JkSwvvHZVglwRQBzI_8Kl67ibb4ERfmeCDYGYXpCDxZ8Oj2y6FC6b4F4SgQ9isNFOnsjqZ9XexxiAJxAyRzQ3tVa-YOl0");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 w-full z-20">
+<div class="flex gap-2 border-t border-slate-200 dark:border-[#234832] bg-background-light/95 dark:bg-surface-dark/95 backdrop-blur-sm px-4 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-[#92c9a8] hover:text-slate-600 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-[#92c9a8] hover:text-slate-600 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">style</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Decks</p>
+</a>
+<!-- Active State for Add -->
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] font-bold fill-current variation-filled">add_circle</span>
+<p class="text-xs font-bold leading-normal tracking-[0.015em]">Add</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-[#92c9a8] hover:text-slate-600 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</div>
+</div>
+<style>
+    /* Material Symbols Fill Variation for the active tab */
+    .variation-filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+</style>
+<script src="js/main.js"></script>
+</body></html>
