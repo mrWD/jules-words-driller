@@ -82,10 +82,10 @@
 <!-- Segmented Control (Tabs) -->
 <div class="px-4 py-3">
 <div class="flex p-1 bg-slate-200 dark:bg-card-dark rounded-xl">
-<button class="flex-1 py-1.5 text-sm font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+<button id="grouped-tab" class="flex-1 py-1.5 text-sm font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                     Grouped
                 </button>
-<button class="flex-1 py-1.5 text-sm font-medium rounded-lg bg-white dark:bg-background-dark text-slate-900 dark:text-white shadow-sm transition-all">
+<button id="all-words-tab" class="flex-1 py-1.5 text-sm font-medium rounded-lg bg-white dark:bg-background-dark text-slate-900 dark:text-white shadow-sm transition-all">
                     All Words
                 </button>
 </div>
@@ -93,17 +93,17 @@
 <!-- Filter Chips -->
 <div class="px-4 pb-4">
 <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
-<button class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
+<button id="sort-by-name-btn" class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
 <span class="material-symbols-outlined text-[18px]">sort_by_alpha</span>
 <span class="text-xs font-medium">Name</span>
 <span class="material-symbols-outlined text-[16px]">expand_more</span>
 </button>
-<button class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
+<button id="filter-by-tags-btn" class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
 <span class="material-symbols-outlined text-[18px]">filter_list</span>
 <span class="text-xs font-medium">Tags</span>
 <span class="material-symbols-outlined text-[16px]">expand_more</span>
 </button>
-<button class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
+<button id="sort-by-date-btn" class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-card-dark border border-transparent dark:border-white/5 active:bg-primary active:text-black">
 <span class="material-symbols-outlined text-[18px]">calendar_month</span>
 <span class="text-xs font-medium">Date</span>
 <span class="material-symbols-outlined text-[16px]">expand_more</span>
@@ -155,7 +155,7 @@
 </div>
 <!-- List Item 2: Swiped State Simulation -->
 <!-- We visually move the foreground to the left to show the user what swipe looks like -->
-<div class="relative w-full h-[76px] rounded-xl overflow-hidden group">
+<div class="relative w-full h-[76px] rounded-xl overflow-hidden group" data-testid="word-item-2">
 <div class="absolute inset-0 flex flex-row-reverse">
 <div class="h-full w-16 bg-red-500 flex items-center justify-center text-white cursor-pointer active:bg-red-600">
 <span class="material-symbols-outlined text-xl">delete</span>

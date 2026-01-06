@@ -91,7 +91,7 @@
 </div>
 </div>
 <!-- Scrollable Tree List -->
-<div class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<div id="group-list" class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
 <!-- Group Item: Verbs (Collapsed) -->
 <div class="group flex items-center justify-between p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
 <div class="flex items-center gap-3 flex-1 overflow-hidden">
@@ -207,11 +207,11 @@
 <!-- Footer / Action Bar -->
 <div class="shrink-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-white/5 p-4 pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] dark:shadow-none z-20">
 <div class="flex items-center gap-4">
-<button class="flex items-center justify-center gap-2 h-14 px-6 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-white/5 text-slate-900 dark:text-white font-medium transition-all active:scale-95 flex-1">
+<button id="new-group-btn" class="flex items-center justify-center gap-2 h-14 px-6 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-white/5 text-slate-900 dark:text-white font-medium transition-all active:scale-95 flex-1">
 <span class="material-symbols-outlined text-[20px] text-primary">create_new_folder</span>
                     New Group
                 </button>
-<button class="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-primary hover:bg-primary/90 text-background-dark font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex-[2]">
+<button id="select-group-btn" class="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-primary hover:bg-primary/90 text-background-dark font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex-[2]">
                     Select
                 </button>
 </div>
